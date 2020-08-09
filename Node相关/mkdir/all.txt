@@ -1,0 +1,318 @@
+hello3
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 18:47:30
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:48:39
+ */
+let fs = require('fs')
+fs.unlink('xy.txt',function() {
+  console.log('成功删除');
+})
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 14:21:17
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:06:07
+ */
+var fs = require('fs');
+const { resolve } = require('path');
+const { rejects } = require('assert');
+// 导入文件模块
+// node,读写文件也有同步和异步的接口
+
+
+// 同步,等待和阻塞
+// var content = fs.readFileSync('hello.txt', { flag: 'r', encoding: "utf-8" })
+// console.log(content);
+// 异步
+// fs.readFile('hello.txt', { flag: 'r', encoding: "utf-8" }, (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+//   console.log(456);
+// })
+
+// console.log(123);
+
+// 用promise对读取文件进行封装
+function fsRead(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, { flag: 'r', encoding: "utf-8" }, (err, data) => {
+      if (err) {
+        // console.log(err);
+        // 失败执行的内容
+        reject(err)
+      } else {
+        // console.log(data);
+        resolve(data)
+      }
+      // console.log(456);
+    })
+  })
+}
+
+
+// var w1 = fsRead('hello.txt')
+// w1.then(res => {
+//   console.log(res);
+// })
+
+async function ReadList() {
+  var file2 = await fsRead('hello.txt')
+  console.log('1:',file2.toString()+ '.txt');
+  console.log('1:','hello2.txt');
+  console.log(file2.length);
+  var file3 = await fsRead(file2.trim()+ '.txt')
+  console.log(file3);
+  var file3Content = await fsRead(file3+ '.txt')
+  console.log(file3Content);
+}
+
+ReadList()
+// 1.数组不能进行二进制数据的操作
+// 2.js数组不像java、payth等语言效率高
+// 3.buffer内存空间开辟出固定大小的内存
+
+// 将字符串转成buffer对象
+var str = 'helloworld'
+let buf = Buffer.from(str)
+// console.log(buf);
+
+// 输出buffer内容
+// console.log(buf.toString());
+
+// 开辟一个空的buffer(缓存区)
+let buf1 = Buffer.alloc(10)
+// buf1[0] = 256
+console.log(buf1);
+
+
+let buf2 = Buffer.allocUnsafe(10)
+console.log(buf2);
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 18:16:38
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:36:51
+ */
+let fs = require('fs');
+const { resolve } = require('path');
+
+// flag
+// write=>w   read=>r   apped=>a
+// 'w': 打开文件用于写入。 如果文件不存在则创建文件，如果文件存在则截断文件。
+// 'a': 打开文件用于追加。 如果文件不存在，则创建该文件。
+// fs.writeFile('test.txt',"今晚吃啥？\n", {flag: 'a',encoding:"utf-8"},function(err){
+//   if(err) {
+//     console.log(err,'写入内容出错');
+//   }else {
+//     console.log('写入内容成功');
+//   }
+// })
+
+function writefs(path,content){
+  return new Promise((resolve,reject) => {
+    fs.writeFile(path,`${content}\n`, {flag: 'a',encoding:"utf-8"},function(err){
+      if(err) {
+        reject(err)
+        // console.log(err,'写入内容出错');
+      }else {
+        resolve(err)
+        // console.log('写入内容成功');
+      }
+    })
+  })
+}
+
+// async function writeList() {
+//   await writefs('xy.txt', '1今天学Node')
+//   await writefs('xy.txt', '2明天学Node')
+//   await writefs('xy.txt', '3后天学Node')
+//   await writefs('xy.txt', '4大后天学Node')
+// }
+
+async function writeList() {
+  await writefs('xy.html', '<h1>1今天学Node</h1>')
+  await writefs('xy.html', '<h1>2明天学Node</h1>')
+  await writefs('xy.html', '<h1>3后天学Node</h1>')
+  await writefs('xy.html', '<h1>4大后天学Node</h1>')
+}
+
+writeList()
+hello第三个文件
+hello2
+
+<h1>1今天学Node</h1>
+<h1>1今天学Node</h1>
+<h1>2明天学Node</h1>
+<h1>3后天学Node</h1>
+<h1>4大后天学Node</h1>
+
+hello第三个文件
+hello2
+
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 18:47:30
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:48:39
+ */
+let fs = require('fs')
+fs.unlink('xy.txt',function() {
+  console.log('成功删除');
+})
+hello3
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 14:21:17
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:06:07
+ */
+var fs = require('fs');
+const { resolve } = require('path');
+const { rejects } = require('assert');
+// 导入文件模块
+// node,读写文件也有同步和异步的接口
+
+
+// 同步,等待和阻塞
+// var content = fs.readFileSync('hello.txt', { flag: 'r', encoding: "utf-8" })
+// console.log(content);
+// 异步
+// fs.readFile('hello.txt', { flag: 'r', encoding: "utf-8" }, (err, data) => {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(data);
+//   }
+//   console.log(456);
+// })
+
+// console.log(123);
+
+// 用promise对读取文件进行封装
+function fsRead(path) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(path, { flag: 'r', encoding: "utf-8" }, (err, data) => {
+      if (err) {
+        // console.log(err);
+        // 失败执行的内容
+        reject(err)
+      } else {
+        // console.log(data);
+        resolve(data)
+      }
+      // console.log(456);
+    })
+  })
+}
+
+
+// var w1 = fsRead('hello.txt')
+// w1.then(res => {
+//   console.log(res);
+// })
+
+async function ReadList() {
+  var file2 = await fsRead('hello.txt')
+  console.log('1:',file2.toString()+ '.txt');
+  console.log('1:','hello2.txt');
+  console.log(file2.length);
+  var file3 = await fsRead(file2.trim()+ '.txt')
+  console.log(file3);
+  var file3Content = await fsRead(file3+ '.txt')
+  console.log(file3Content);
+}
+
+ReadList()
+<h1>1今天学Node</h1>
+<h1>1今天学Node</h1>
+<h1>2明天学Node</h1>
+<h1>3后天学Node</h1>
+<h1>4大后天学Node</h1>
+
+// 1.数组不能进行二进制数据的操作
+// 2.js数组不像java、payth等语言效率高
+// 3.buffer内存空间开辟出固定大小的内存
+
+// 将字符串转成buffer对象
+var str = 'helloworld'
+let buf = Buffer.from(str)
+// console.log(buf);
+
+// 输出buffer内容
+// console.log(buf.toString());
+
+// 开辟一个空的buffer(缓存区)
+let buf1 = Buffer.alloc(10)
+// buf1[0] = 256
+console.log(buf1);
+
+
+let buf2 = Buffer.allocUnsafe(10)
+console.log(buf2);
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-07 18:16:38
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-07 18:36:51
+ */
+let fs = require('fs');
+const { resolve } = require('path');
+
+// flag
+// write=>w   read=>r   apped=>a
+// 'w': 打开文件用于写入。 如果文件不存在则创建文件，如果文件存在则截断文件。
+// 'a': 打开文件用于追加。 如果文件不存在，则创建该文件。
+// fs.writeFile('test.txt',"今晚吃啥？\n", {flag: 'a',encoding:"utf-8"},function(err){
+//   if(err) {
+//     console.log(err,'写入内容出错');
+//   }else {
+//     console.log('写入内容成功');
+//   }
+// })
+
+function writefs(path,content){
+  return new Promise((resolve,reject) => {
+    fs.writeFile(path,`${content}\n`, {flag: 'a',encoding:"utf-8"},function(err){
+      if(err) {
+        reject(err)
+        // console.log(err,'写入内容出错');
+      }else {
+        resolve(err)
+        // console.log('写入内容成功');
+      }
+    })
+  })
+}
+
+// async function writeList() {
+//   await writefs('xy.txt', '1今天学Node')
+//   await writefs('xy.txt', '2明天学Node')
+//   await writefs('xy.txt', '3后天学Node')
+//   await writefs('xy.txt', '4大后天学Node')
+// }
+
+async function writeList() {
+  await writefs('xy.html', '<h1>1今天学Node</h1>')
+  await writefs('xy.html', '<h1>2明天学Node</h1>')
+  await writefs('xy.html', '<h1>3后天学Node</h1>')
+  await writefs('xy.html', '<h1>4大后天学Node</h1>')
+}
+
+writeList()
