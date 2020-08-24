@@ -1,0 +1,56 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: dxiaoxing
+ * @Date: 2020-08-24 14:56:54
+ * @LastEditors: dxiaoxing
+ * @LastEditTime: 2020-08-24 15:20:56
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+      Symbol的使用
+
+      属性私有化 * 属性保护
+    */
+
+    // 保护sex数据不被再次修改
+    // class Person {
+    //   constructor(name,sex) {
+    //     this.name = name
+    //     this.sex = sex
+    //   }
+    // }
+
+    // let p1 = new Person('xiaoyu', '男')
+    // console.log(p1.sex);
+
+    var Person = (function () {
+      let _gender = Symbol('gender')
+      class P {
+        constructor(name, sex) {
+          this.name = name
+          this[_gender] = sex
+        }
+        say() {
+          console.log(111,this[_gender]);
+        }
+      }
+      return P
+    })()
+    let p1 = new Person('xaioyu','男')
+    console.log(p1);
+    console.log(p1.say());  
+  </script>
+</body>
+
+</html>
