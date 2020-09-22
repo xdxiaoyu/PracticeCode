@@ -1,11 +1,10 @@
-
-var dom = document.getElementById('root')
-var header = document.createElement('div')
-header.innerText = 'header'
-dom.append(header)
+import Header from './header'
+import Sidebar from './sidebar'
+import Content from './content'
 
 
-var sidebar = document.getElementById('root')
-var sidebar = document.createElement('div')
-sidebar.innerText = 'sidebar'
-dom.append(sidebar)
+
+
+new Header()
+new Sidebar()
+new Content()
