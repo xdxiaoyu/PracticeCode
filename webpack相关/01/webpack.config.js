@@ -10,7 +10,12 @@ module.exports = {
     rules: [{
       test: /\.jpg$/,
       use: {
-        loader: 'file-loader'
+        loader: 'file-loader',
+        options: {
+          // placeholder 占位符
+          name: '[name]_[hash].[ext]',
+          outputPath: 'images/'
+        }
       }
     }]
   },
