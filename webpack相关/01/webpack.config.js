@@ -8,13 +8,19 @@ module.exports = {
   entry: './src/index.js',
   module: {
     rules: [{
-      test: /\.jpg$/,
+      test: /\.(jpg|png|gif)$/,
       use: {
-        loader: 'file-loader',
+        // loader: 'file-loader',
+        // options: {
+        //   // placeholder 占位符
+        //   name: '[name]_[hash].[ext]',
+        //   outputPath: 'images/'
+        // }
+        loader: 'url-loader',
         options: {
-          // placeholder 占位符
           name: '[name]_[hash].[ext]',
-          outputPath: 'images/'
+          outputPath: 'images/',
+          limit: 20480
         }
       }
     }]
