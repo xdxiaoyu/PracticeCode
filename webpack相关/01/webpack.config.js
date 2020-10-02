@@ -1,4 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 
 // node核心模块path两个小知识点复习
 // __dirname：或取当前执行文件所在目录的完整目录名
@@ -25,8 +28,16 @@ module.exports = {
       }
     }]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new CleanWebpackPlugin({
+      protectWebpackAssets: false,
+      // 允许删除当前打包文件的资源（默认是true-不允许）
+    })],
   output: {
-    filename: 'bundle.js',
+    filename: 'dist.js',
     path: path.resolve(__dirname, 'dist')
   }
 }
