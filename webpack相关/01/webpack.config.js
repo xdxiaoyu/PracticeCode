@@ -8,7 +8,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // path.resolve()：把路径或者路径片段的序列解析为一个绝对路径
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  devtool: 'cheap-module-eval-source-map',
+  entry: {
+    main: './src/index.js',
+  },
+  devServer: {
+    contentBase: './dist',
+    open: true, // 自动打开浏览器访问地址
+  },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,
@@ -32,12 +39,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin({
-      protectWebpackAssets: false,
-      // 允许删除当前打包文件的资源（默认是true-不允许）
-    })],
+    new CleanWebpackPlugin()
+  ],
   output: {
-    filename: 'dist.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   }
 }
