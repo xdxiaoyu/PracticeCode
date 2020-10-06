@@ -19,7 +19,7 @@
 // root.append(img)
 
 
-console.log('hello word!-+-!');
+console.log('hello word!+++!');
 
 
 // sourceMap
