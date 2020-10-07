@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const webpack = require('webpack')
 
 
 // node核心模块path两个小知识点复习
@@ -15,6 +16,8 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     open: true, // 自动打开浏览器访问地址
+    hot: true,
+    hotOnly: true
   },
   module: {
     rules: [{
@@ -33,13 +36,22 @@ module.exports = {
           limit: 20480
         }
       }
-    }]
+    },
+    {
+      test: /\.css$/,
+      use: [
+        'style-loader',
+        'css-loader',
+      ]
+    } 
+  ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     publicPath: '/',
