@@ -43,8 +43,16 @@ module.exports = {
         'style-loader',
         'css-loader',
       ]
-    } 
-  ]
+    },
+    // exclude 排出在外的模块
+    {
+      test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", options: {
+        "presets": [["@babel/preset-env", {
+          useBuiltIns: 'usage'
+        }]]
+      }
+    }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
