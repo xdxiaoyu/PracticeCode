@@ -56,7 +56,7 @@
 //   })
 // }
 
-import "@babel/polyfill";
+// import "@babel/polyfill";
 
 const arr = [
   new Promise(() => {}),
