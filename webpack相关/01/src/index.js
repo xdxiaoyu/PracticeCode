@@ -58,10 +58,14 @@
 
 // import "@babel/polyfill";
 
-const arr = [
-  new Promise(() => {}),
-  new Promise(() => {}),
-]
-arr.map(item => {
-  console.log(item);
-})
+// const arr = [
+//   new Promise(() => {}),
+//   new Promise(() => {}),
+// ]
+// arr.map(item => {
+//   console.log(item);
+// })
+
+import { add } from './math'
+
+add(1, 2)
