@@ -66,6 +66,6 @@
 //   console.log(item);
 // })
 
-import { add } from './math'
+import { add } from './math.js'
 
 add(1, 2)

@@ -1,16 +1,3 @@
-// {
-//   "plugins": [[
-//     "@babel/plugin-transform-runtime",
-//     {
-//       "absoluteRuntime": false,
-//       "corejs": 2,
-//       "helpers": true,
-//       "regenerator": true,
-//       "useESModules": false,
-//       "version": "7.0.0-beta.0"
-//     }
-//   ]]
-// }
 {
   // 业务代码使用
   "presets": [
@@ -26,3 +13,17 @@
     ]
   ]
 }
+// {
+//   "plugins": [[
+//     "@babel/plugin-transform-runtime",
+//     {
+//       "absoluteRuntime": false,
+//       "corejs": 2,
+//       "helpers": true,
+//       "regenerator": true,
+//       "useESModules": false,
+//       "version": "7.0.0-beta.0"
+//     }
+//   ]]
+// }
+
