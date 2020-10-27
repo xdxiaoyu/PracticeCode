@@ -66,6 +66,14 @@
 //   console.log(item);
 // })
 
+// import '@babel/polyfill' 
+// 实际上并未导出任何内容， 是在windowd对象直接绑定Promise
+// Tree Shaking 打包的时候发现没有任何导出可能就会直接忽略掉
+// 实现是需要的，但是因为没有导出内容，使用Tree Shaking就会忽略掉会导致报错
+// 解决方案：package.json中写入"sideEffects": ["@babel/polyfill"],
+// 没有特殊处理的，直接写false
+// 一般会遇到引入css文件的情况，需要配置"sideEffects": ["*.css"]
+
 import { add } from './math.js'
 
 add(1, 2)
