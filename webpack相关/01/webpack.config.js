@@ -8,8 +8,8 @@ const webpack = require('webpack')
 // __dirname：或取当前执行文件所在目录的完整目录名
 // path.resolve()：把路径或者路径片段的序列解析为一个绝对路径
 module.exports = {
-  mode: 'production',
-  devtool: 'cheap-module-source-map', // production环境下使用cheap-module-source-map
+  mode: 'develoment',
+  devtool: 'cheap-module-eval-source-map', // production环境下使用cheap-module-source-map
   entry: {
     main: './src/index.js',
   },
@@ -80,10 +80,10 @@ module.exports = {
     new CleanWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin()
   ],
-  // prodyction 环境下不需要写
-  // optimization: {
-  //   usedExports: true
-  // },
+  // production 环境打包时，下方代码可以注释
+  optimization: {
+    usedExports: true
+  },
   output: {
     // publicPath: '/',
     filename: '[name].js',
