@@ -13,12 +13,13 @@ module.exports = {
   entry: {
     main: './src/index.js',
   },
-  devServer: {
-    contentBase: './dist',
-    open: true, // 自动打开浏览器访问地址
-    hot: true,
-    hotOnly: true
-  },
+  // 线上打包可以去掉
+  // devServer: {
+  //   contentBase: './dist',
+  //   open: true, // 自动打开浏览器访问地址
+  //   hot: true,
+  //   hotOnly: true
+  // },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,
@@ -78,12 +79,11 @@ module.exports = {
       template: 'src/index.html'
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin()
   ],
   // production 环境打包时，下方代码可以注释
-  optimization: {
-    usedExports: true
-  },
+  // optimization: {
+  //   usedExports: true
+  // },
   output: {
     // publicPath: '/',
     filename: '[name].js',
