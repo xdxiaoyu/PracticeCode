@@ -1,25 +1,14 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const webpack = require('webpack')
-
-
 // node核心模块path两个小知识点复习
 // __dirname：或取当前执行文件所在目录的完整目录名
 // path.resolve()：把路径或者路径片段的序列解析为一个绝对路径
+const path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
-  mode: 'develoment',
-  devtool: 'cheap-module-eval-source-map', // production环境下使用cheap-module-source-map
   entry: {
     main: './src/index.js',
   },
-  // 线上打包可以去掉
-  // devServer: {
-  //   contentBase: './dist',
-  //   open: true, // 自动打开浏览器访问地址
-  //   hot: true,
-  //   hotOnly: true
-  // },
   module: {
     rules: [{
       test: /\.(jpg|png|gif)$/,
@@ -47,7 +36,7 @@ module.exports = {
     },
     // exclude 排出在外的模块
     {
-      test: /\.js$/, exclude: /node_modules/, loader: "babel-loader", 
+      test: /\.js$/, exclude: /node_modules/, loader: "babel-loader",
       // options: 将放入.babelrc中 
       // {
       //   // 业务代码使用
@@ -80,10 +69,6 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
-  // production 环境打包时，下方代码可以注释
-  // optimization: {
-  //   usedExports: true
-  // },
   output: {
     // publicPath: '/',
     filename: '[name].js',

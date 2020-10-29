@@ -76,4 +76,4 @@
 
 import { add } from './math.js'
 
-add(1, 2)
+add(1, 7)
