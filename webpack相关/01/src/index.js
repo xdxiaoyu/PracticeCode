@@ -74,6 +74,11 @@
 // 没有特殊处理的，直接写false
 // 一般会遇到引入css文件的情况，需要配置"sideEffects": ["*.css"]
 
-import { add } from './math.js'
+// import { add } from './math.js'
 
-add(1, 7)
+// add(1, 7)
+
+
+import _ from 'lodash';
+
+console.log(_.join(['a', 'b', 'c'], '***'));
