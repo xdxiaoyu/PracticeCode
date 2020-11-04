@@ -7,6 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: {
+    // lodash: './src/lodash.js',
     main: './src/index.js',
   },
   module: {
@@ -69,6 +70,11 @@ module.exports = {
     }),
     new CleanWebpackPlugin(),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  },
   output: {
     // publicPath: '/',
     filename: '[name].js',

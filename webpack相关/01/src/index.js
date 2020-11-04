@@ -79,6 +79,50 @@
 // add(1, 7)
 
 
-import _ from 'lodash';
 
+/* code splitting 代码分割
+
+
+// import _ from 'lodash'; // 假设lodash 一共1mb 转入lodash.js中
+
+// 假设业务代码 1mb
 console.log(_.join(['a', 'b', 'c'], '***'));
+// 此处省略10万行业务逻辑
+console.log(_.join(['a', 'b', 'c'], '***'));
+
+// 假设不压缩main.js  2mb
+// 打包文件会很大，加载时间会长
+// 逻辑代码更改，再次打包 -> 2mb
+// 重新访问我们的页面，又要加载2mb的内容
+
+// 第一种方式
+// main.js被拆成 lodash.js(1MB), main.js(1MB)
+// 当页面业务逻辑发生变化时，只需要加载main.js即可（1MB）
+
+// Code Splitting -> 对代码进行拆分，代码执行性能更高，用户体验更好
+
+*/
+
+
+/* 同步 splitChunks 使用webpack插件打包
+import _ from 'lodash';
+console.log(_.join(['a', 'b', 'c'], '***'));
+*/
+
+/*异步*/
+function getComponent() {
+  return import('lodash').then(({ default: _ }) => {
+    var element = document.createElement('div')
+    element.innerHTML = _.join(['Dell','Lee'], '-')
+    return element
+  })
+} 
+
+getComponent().then(element => {
+  document.body.appendChild(element)
+})
+
+// 总结 代码分割和webpack无关
+// webpack中实现代码分割，两种方式
+// 1.同步代码：只需要在webpack.common.js中做optimization的配置即可 
+// 2.异步代码（import）：异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
