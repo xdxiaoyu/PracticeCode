@@ -72,7 +72,11 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      cacheGroups: {
+        defaultVendors: false,
+        default: false
+      }
     }
   },
   output: {
