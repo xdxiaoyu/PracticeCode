@@ -81,17 +81,21 @@ module.exports = {
     }
     */
     splitChunks: {
-      chunks: 'async',
+      chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码
       minSize: 20000,
       // minRemainingSize: 0,
-      maxSize: 0,
+      maxSize: 0, // 引入库大于当前数值kb 才会做代码分割
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
       automaticNameDelimiter: '~',
       enforceSizeThreshold: 50000,
       cacheGroups: {
-        vendors: false,
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          filename: 'vendors.js'
+        },
         default: false
       }
     }

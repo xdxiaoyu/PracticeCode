@@ -104,23 +104,23 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 */
 
 
-/* 同步 splitChunks 使用webpack插件打包
+/* 同步 splitChunks 使用webpack插件打包*/
 import _ from 'lodash';
 console.log(_.join(['a', 'b', 'c'], '***'));
-*/
+
 
 /*异步*/
-function getComponent() {
-  return import(/*webpackChunkName:"lodash"*/'lodash').then(({ default: _ }) => {
-    var element = document.createElement('div')
-    element.innerHTML = _.join(['Dell', 'Lee'], '-')
-    return element
-  })
-}
+// function getComponent() {
+//   return import(/*webpackChunkName:"lodash"*/'lodash').then(({ default: _ }) => {
+//     var element = document.createElement('div')
+//     element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//     return element
+//   })
+// }
 
-getComponent().then(element => {
-  document.body.appendChild(element)
-})
+// getComponent().then(element => {
+//   document.body.appendChild(element)
+// })
 
 // 总结 代码分割和webpack无关
 // webpack中实现代码分割，两种方式
