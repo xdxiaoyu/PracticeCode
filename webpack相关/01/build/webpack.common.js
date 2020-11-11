@@ -82,9 +82,9 @@ module.exports = {
     */
     splitChunks: {
       chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码
-      minSize: 20000,
+      minSize: 0,
       // minRemainingSize: 0,
-      maxSize: 0, // 引入库大于当前数值kb 才会做代码分割
+      maxSize: 0, // 引入库大于当前数值30000kb 才会做代码分割
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
@@ -96,13 +96,17 @@ module.exports = {
           priority: -10,
           filename: 'vendors.js'
         },
-        default: false
+        default: {
+          priority: -20,
+          reuseExistingChunk: true,
+          filename: 'common.js'
+        }
       }
     }
   },
   output: {
     // publicPath: '/',
-    filename: '[name].js',
+    filename: 'main.js',
     path: path.resolve(__dirname, '../dist')
   }
 }
