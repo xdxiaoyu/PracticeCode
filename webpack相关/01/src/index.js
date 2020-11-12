@@ -105,21 +105,21 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 
 
 /* 同步 splitChunks 使用webpack插件打包*/
-// import _ from 'lodash';
+import _ from 'lodash';
 // console.log(_.join(['a', 'b', 'c'], '***'));
 
 
 /*异步*/
 // function getComponent() {
 //   return import(/*webpackChunkName:"lodash"*/'lodash').then(({ default: _ }) => {
-//     var element = document.createElement('div')
-//     element.innerHTML = _.join(['Dell', 'Lee'], '-')
+    var element = document.createElement('div')
+    element.innerHTML = _.join(['Dell', 'Lee'], '-')
 //     return element
 //   })
 // }
 
 // getComponent().then(element => {
-//   document.body.appendChild(element)
+  document.body.appendChild(element)
 // })
 
 // 总结 代码分割和webpack无关
@@ -128,5 +128,5 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 // 2.异步代码（import）：异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
 
 
-import test from './test'
-console.log(test);
+// import test from './test'
+// console.log(test);

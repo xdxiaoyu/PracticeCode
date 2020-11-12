@@ -82,13 +82,12 @@ module.exports = {
     */
     splitChunks: {
       chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码
-      minSize: 0,
+      minSize: 30000, // 引入库大于当前数值30000kb 才会做代码分割
       // minRemainingSize: 0,
-      maxSize: 0, // 引入库大于当前数值30000kb 才会做代码分割
-      minChunks: 1,
-      maxAsyncRequests: 30,
-      maxInitialRequests: 30,
-      automaticNameDelimiter: '~',
+      minChunks: 1, // 当一个模块被用了至少多少次的时候才进行代码分割
+      maxAsyncRequests: 30, // 同时加载的模块数超过30就不分割了
+      maxInitialRequests: 30, // 入口文件最多分割成30个文件
+      automaticNameDelimiter: '~', // 文件名连接符
       enforceSizeThreshold: 50000,
       cacheGroups: {
         vendors: {
