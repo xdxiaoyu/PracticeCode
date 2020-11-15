@@ -105,22 +105,22 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 
 
 /* 同步 splitChunks 使用webpack插件打包*/
-import _ from 'lodash';
-import jquery from 'jquery'
+// import _ from 'lodash';
+// import jquery from 'jquery'
 // console.log(_.join(['a', 'b', 'c'], '***'));
 
 
 /*异步*/
 // function getComponent() {
 //   return import(/*webpackChunkName:"lodash"*/'lodash').then(({ default: _ }) => {
-    var element = document.createElement('div')
-    element.innerHTML = _.join(['Dell', 'Lee'], '-')
+// var element = document.createElement('div')
+// element.innerHTML = _.join(['Dell', 'Lee'], '-')
 //     return element
 //   })
 // }
 
 // getComponent().then(element => {
-  document.body.appendChild(element)
+// document.body.appendChild(element)
 // })
 
 // 总结 代码分割和webpack无关
@@ -131,3 +131,39 @@ import jquery from 'jquery'
 
 // import test from './test'
 // console.log(test);
+
+/* Lazy Loading */
+// function getComponent() {
+//   return import(/*webpackChunkName:"lodash"*/'lodash').then(({ default: _ }) => {
+//     var element = document.createElement('div')
+//     element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//     return element
+//   })
+// }
+// document.addEventListener('click', () => {
+//   getComponent().then(element => {
+//     document.body.appendChild(element)
+//   })
+// })
+
+// 借助import这种语法，可以让页面加载速度更快
+// 懒加载其实并不是webpack里面的模块，是ES里面的。本质关系不大，webpack只是能识别inport这种语法进行代码分割
+
+// 用async和await优化
+
+async function getComponent() {
+  const { default: _ } =  await import(/*webpackChunkName:"lodash"*/'lodash')
+  const element = document.createElement('div')
+  element.innerHTML = _.join(['Dell', 'Lee'], '-')
+  return element
+}
+document.addEventListener('click', () => {
+  getComponent().then(element => {
+    document.body.appendChild(element)
+  })
+})
+
+/*
+Chunk
+每一个打包出来的js文件都是chunk
+*/ 

@@ -9,6 +9,9 @@
           "safari": "11.1" // 同理
         },
         "useBuiltIns": "usage"
+        // 新版本内置了babel-polyfill,配置如上参数
+        // 在项目写代码，会自动检测环境如果没有promise，底层会自动的去调babel-polyfill帮我们往环境里注入这个东西
+        // promise只是一个例子，其他语法同上
       }
     ]
   ],

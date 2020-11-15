@@ -84,7 +84,7 @@ module.exports = {
       chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码
       minSize: 30000, // 引入库大于当前数值30000kb 才会做代码分割
       // minRemainingSize: 0,
-      minChunks: 1, // 当一个模块被用了至少多少次的时候才进行代码分割
+      minChunks: 1, // 当一个模块被用了至少多少次的时候才进行代码分割 ->（打包生成的文件有几个chunk引用了这个模块，小于当前数值将不进行分割）
       maxAsyncRequests: 30, // 按需加载时的最大并行请求数超过30就不分割了
       maxInitialRequests: 30, // 入口文件最多分割成30个文件
       automaticNameDelimiter: '~', // 文件名连接符
@@ -93,7 +93,7 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10, // default和vendors都满足时，哪个priority值大就会被打包到哪个组里面
-          filename: 'vendors.js'
+          // filename: 'vendors.js'
         },
         default: {
           priority: -20,
