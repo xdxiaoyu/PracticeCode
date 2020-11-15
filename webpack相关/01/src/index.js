@@ -106,6 +106,7 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 
 /* 同步 splitChunks 使用webpack插件打包*/
 import _ from 'lodash';
+import jquery from 'jquery'
 // console.log(_.join(['a', 'b', 'c'], '***'));
 
 

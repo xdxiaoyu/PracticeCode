@@ -85,19 +85,19 @@ module.exports = {
       minSize: 30000, // 引入库大于当前数值30000kb 才会做代码分割
       // minRemainingSize: 0,
       minChunks: 1, // 当一个模块被用了至少多少次的时候才进行代码分割
-      maxAsyncRequests: 30, // 同时加载的模块数超过30就不分割了
+      maxAsyncRequests: 30, // 按需加载时的最大并行请求数超过30就不分割了
       maxInitialRequests: 30, // 入口文件最多分割成30个文件
       automaticNameDelimiter: '~', // 文件名连接符
       enforceSizeThreshold: 50000,
-      cacheGroups: {
+      cacheGroups: { // 缓存组。同时引入loadsh和jquery。使用cacheGroups可以让两个模块打包在一个js文件中
         vendors: {
           test: /[\\/]node_modules[\\/]/,
-          priority: -10,
+          priority: -10, // default和vendors都满足时，哪个priority值大就会被打包到哪个组里面
           filename: 'vendors.js'
         },
         default: {
           priority: -20,
-          reuseExistingChunk: true,
+          reuseExistingChunk: true, // 已打包过的模块再次在其他模块中被使用时，将不会重复打包
           filename: 'common.js'
         }
       }
