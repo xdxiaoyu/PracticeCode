@@ -151,19 +151,30 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 
 // 用async和await优化
 
-async function getComponent() {
-  const { default: _ } =  await import(/*webpackChunkName:"lodash"*/'lodash')
-  const element = document.createElement('div')
-  element.innerHTML = _.join(['Dell', 'Lee'], '-')
-  return element
-}
-document.addEventListener('click', () => {
-  getComponent().then(element => {
-    document.body.appendChild(element)
-  })
-})
+// async function getComponent() {
+//   const { default: _ } =  await import(/*webpackChunkName:"lodash"*/'lodash')
+//   const element = document.createElement('div')
+//   element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//   return element
+// }
+// document.addEventListener('click', () => {
+//   getComponent().then(element => {
+//     document.body.appendChild(element)
+//   })
+// })
 
 /*
 Chunk
 每一个打包出来的js文件都是chunk
-*/ 
+*/
+
+
+/*
+Preloading
+*/
+
+document.addEventListener('click', () => {
+  import('./click.js').then(({default: func}) => {
+    func()
+  })
+})

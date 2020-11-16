@@ -83,7 +83,7 @@ module.exports = {
     }
     */
     splitChunks: {
-      chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码
+      chunks: 'all', // 针对同步和异步代码都做分割。initial-同步代码 async-异步代码(默认值)
       minSize: 30000, // 引入库大于当前数值30000kb 才会做代码分割
       // minRemainingSize: 0,
       minChunks: 1, // 当一个模块被用了至少多少次的时候才进行代码分割 ->（打包生成的文件有几个chunk引用了这个模块，小于当前数值将不进行分割）

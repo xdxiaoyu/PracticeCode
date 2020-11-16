@@ -5,8 +5,8 @@ Use Ctrl+C to close it
   "warnings": [],
   "version": "4.44.2",
   "hash": "5ddd43d81ba22bb65c24",
-  "time": 1409,
-  "builtAt": 1605435348147,
+  "time": 3926,
+  "builtAt": 1605488242388,
   "publicPath": "",
   "outputPath": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\dist",
   "assetsByChunkName": {
@@ -122,8 +122,8 @@ Use Ctrl+C to close it
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 76,
-            "building": 1008
+            "factory": 117,
+            "building": 3435
           },
           "failed": false,
           "errors": 0,
@@ -203,14 +203,14 @@ Use Ctrl+C to close it
               "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 76,
-                "building": 1008
+                "factory": 117,
+                "building": 3435
               }
             }
           ],
           "profile": {
-            "factory": 5,
-            "building": 201
+            "factory": 6,
+            "building": 215
           },
           "failed": false,
           "errors": 0,
@@ -256,8 +256,8 @@ Use Ctrl+C to close it
               "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 76,
-                "building": 1008
+                "factory": 117,
+                "building": 3435
               }
             },
             {
@@ -265,8 +265,8 @@ Use Ctrl+C to close it
               "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\lodash\\lodash.js",
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
-                "factory": 5,
-                "building": 201
+                "factory": 6,
+                "building": 215
               }
             }
           ],
@@ -318,8 +318,8 @@ Use Ctrl+C to close it
               "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
               "name": "./src/index.js",
               "profile": {
-                "factory": 76,
-                "building": 1008
+                "factory": 117,
+                "building": 3435
               }
             },
             {
@@ -327,8 +327,8 @@ Use Ctrl+C to close it
               "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\lodash\\lodash.js",
               "name": "./node_modules/lodash/lodash.js",
               "profile": {
-                "factory": 5,
-                "building": 201
+                "factory": 6,
+                "building": 215
               }
             }
           ],
@@ -396,14 +396,14 @@ Use Ctrl+C to close it
           "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 76,
-            "building": 1008
+            "factory": 117,
+            "building": 3435
           }
         }
       ],
       "profile": {
-        "factory": 5,
-        "building": 201
+        "factory": 6,
+        "building": 215
       },
       "failed": false,
       "errors": 0,
@@ -449,8 +449,8 @@ Use Ctrl+C to close it
           "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 76,
-            "building": 1008
+            "factory": 117,
+            "building": 3435
           }
         },
         {
@@ -458,8 +458,8 @@ Use Ctrl+C to close it
           "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\lodash\\lodash.js",
           "name": "./node_modules/lodash/lodash.js",
           "profile": {
-            "factory": 5,
-            "building": 201
+            "factory": 6,
+            "building": 215
           }
         }
       ],
@@ -511,8 +511,8 @@ Use Ctrl+C to close it
           "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\babel-loader\\lib\\index.js!D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\src\\index.js",
           "name": "./src/index.js",
           "profile": {
-            "factory": 76,
-            "building": 1008
+            "factory": 117,
+            "building": 3435
           }
         },
         {
@@ -520,8 +520,8 @@ Use Ctrl+C to close it
           "identifier": "D:\\exces\\seCode\\PracticeCode\\webpack相关\\01\\node_modules\\lodash\\lodash.js",
           "name": "./node_modules/lodash/lodash.js",
           "profile": {
-            "factory": 5,
-            "building": 201
+            "factory": 6,
+            "building": 215
           }
         }
       ],
@@ -569,8 +569,8 @@ Use Ctrl+C to close it
       "issuerName": null,
       "issuerPath": null,
       "profile": {
-        "factory": 76,
-        "building": 1008
+        "factory": 117,
+        "building": 3435
       },
       "failed": false,
       "errors": 0,
@@ -688,8 +688,8 @@ Use Ctrl+C to close it
               "issuerName": null,
               "issuerPath": null,
               "profile": {
-                "factory": 22,
-                "building": 17
+                "factory": 39,
+                "building": 30
               },
               "failed": false,
               "errors": 0,
@@ -746,8 +746,8 @@ Use Ctrl+C to close it
           "issuerName": null,
           "issuerPath": null,
           "profile": {
-            "factory": 22,
-            "building": 17
+            "factory": 39,
+            "building": 30
           },
           "failed": false,
           "errors": 0,
