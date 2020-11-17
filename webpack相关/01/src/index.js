@@ -172,9 +172,9 @@ Chunk
 /*
 Preloading
 */
-
 document.addEventListener('click', () => {
-  import('./click.js').then(({default: func}) => {
+  import(/* webpackPrefetch: true */ './click.js').then(({default: func}) => {
     func()
   })
+  // 网络带宽空闲时会预加载这个文件
 })
