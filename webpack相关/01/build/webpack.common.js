@@ -4,7 +4,7 @@
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -25,15 +25,16 @@ module.exports = {
         options: {
           name: '[name]_[hash].[ext]',
           outputPath: 'images/',
-          limit: 20480
+          limit: 10240
         }
       }
     },
     {
-      test: /\.css$/,
+      test: /\.(scss|css)$/,
       use: [
         'style-loader',
         'css-loader',
+        'sass-loader'
       ]
     },
     // exclude 排出在外的模块
@@ -70,7 +71,7 @@ module.exports = {
       template: 'src/index.html'
     }),
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin()  注释打包分析  
   ],
   optimization: {
     /*  

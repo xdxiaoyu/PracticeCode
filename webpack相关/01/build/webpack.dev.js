@@ -13,7 +13,7 @@ const devConfig = {
     contentBase: './dist',
     open: true, // 自动打开浏览器访问地址
     hot: true,
-    // hotOnly: true
+    hotOnly: true
   },
 
   plugins: [

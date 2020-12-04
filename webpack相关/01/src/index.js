@@ -190,3 +190,20 @@ Prefetching
 
 // 会等待核心代码加载完成之后，页面宽空闲的时候，再去加载‘webpackPrefetch’对应的js文件。
 // 浏览器可能会存在兼容性问题
+
+
+
+// Webpack与浏览器缓存
+import avatar from './2.jpg'
+import './index.scss';
+
+var img = new Image();
+img.src = avatar
+img.classList.add('avatar')
+
+var root = document.getElementById('root')
+root.append(img)
+
+
+
+
