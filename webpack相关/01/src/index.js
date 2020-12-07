@@ -194,6 +194,7 @@ Prefetching
 
 
 // Webpack与浏览器缓存
+/*
 import avatar from './2.jpg'
 import './index.scss';
 
@@ -203,7 +204,16 @@ img.classList.add('avatar')
 
 var root = document.getElementById('root')
 root.append(img)
+*/ 
 
+// Shimming
+import $ from 'jquery';
+import _ from 'lodash';
+
+
+const dom = $('<div>');
+dom.html(_.join(['dell', 'lee'], '----'));
+$('body').append(dom)
 
 
 

@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map', // production环境下使用cheap-module-source-map
   devServer: {
     contentBase: './dist',
-    open: false, // 自动打开浏览器访问地址
+    open: true, // 自动打开浏览器访问地址
     hot: true,
     hotOnly: true
   },
