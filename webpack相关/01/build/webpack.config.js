@@ -37,7 +37,16 @@ module.exports = {
     },
     // exclude 排出在外的模块
     {
-      test: /\.js$/, exclude: /node_modules/, loader: "babel-loader",
+      test: /\.js$/,
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: "babel-loader",
+        },
+        // {
+        //   loader: 'imports',
+        // },
+      ],
     }
     ]
   },
@@ -46,8 +55,12 @@ module.exports = {
       template: 'src/index.html'
     }),
     new CleanWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-    // new BundleAnalyzerPlugin()  注释打包分析  
+    new webpack.HotModuleReplacementPlugin(),
+    // new BundleAnalyzerPlugin()  注释打包分析 
+    new webpack.ProvidePlugin({
+      $: 'jquery', // 当发现你的一个模块里用了$这个字符串，就会在这个模块中导入jquery这个库
+      _join: ['lodash', 'join']
+    })
   ],
   output: {
     filename: 'main.js',
