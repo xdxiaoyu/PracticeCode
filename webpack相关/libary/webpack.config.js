@@ -17,6 +17,5 @@ module.exports = {
     // 全局使用 library.math
     library: 'library',
     // 打包生成的代码挂载到一个页面的全局上library，配置了一个'library'参数
-
   }
 }
