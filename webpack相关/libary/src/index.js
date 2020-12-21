@@ -36,3 +36,6 @@ devDependencies  里面的插件只用于开发环境，不用于生产环境，
 
 后就和他们没关系了，所以将它写入devDependencies。
 */ 
+
+
+// Plugin 插件什么时候有效，在我们打包的时候再某些时刻
