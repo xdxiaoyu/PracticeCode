@@ -8,6 +8,7 @@ class CopyrightWebpackPlugin {
     // 钩子。emit: 生成资源到 output 目录之前。
     // tapAsync: 接收两个参数，这个plugin的名字和回调函数
     compiler.hooks.emit.tapAsync('CopyrightWebpackPlugin',(compilation, cb) => { // compilation - 存放这次打包的相关内容
+      debugger;
       compilation.assets['copyright.txt'] = {
         source: function() {
           return 'copyright by dell lee'
