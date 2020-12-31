@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     new CopyrightWebpackPlugin({
-      name: 'dell' // 传参使用（并不是官方配置参数）
+      name: 'dell' // 传参调试使用（并不是官方配置参数）
     })
   ],
   output: {
