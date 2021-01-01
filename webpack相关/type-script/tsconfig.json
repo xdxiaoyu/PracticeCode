@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "module": "es6", // 我们使用的是esmodule引入的方式即(import)
+    "target": "es5", // 打包生成的文件的语法类型
+    "allowJs": true, // 允许在ts文件中引用js的模块
+  }
+}
