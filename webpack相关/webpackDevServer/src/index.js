@@ -9,9 +9,9 @@ class App extends Component {
   componentDidMount() {
     // charles fiddler
     axios.get('/react/api/header.json')
-        .then((res) => {
-          console.log('结果：', res);
-        })
+      .then((res) => {
+        console.log('结果：', res);
+      })
   }
   render() {
     return <div>Hello World </div>
