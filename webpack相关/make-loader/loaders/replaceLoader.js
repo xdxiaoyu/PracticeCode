@@ -8,6 +8,7 @@ module.exports = function(source) {
   this.callback(null, result)
 }
 
+// 可以同步或异步调用以返回多个结果的函数
 // this.callback(
 //   err: Error | null,
 //   content: string | Buffer, // 源代码进来，解析过后新的代码
