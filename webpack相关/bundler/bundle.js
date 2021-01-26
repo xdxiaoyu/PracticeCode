@@ -21,6 +21,7 @@ const moduleAnalyser = (filename) => {
     }
   })
   // console.log(ast.program.body);
+  
 }
 
 moduleAnalyser('./src/index.js')
