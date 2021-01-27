@@ -81,13 +81,13 @@ const generateCOde = (entry) => {
   return `
     (function(graph){
       function require(module){
-        function loaclRequire(relativePath) {
+        function localRequire(relativePath) {
           return require(graph[module].dependencies[relativePath])
         }
         var exports = {};
         (function(require, exports, code){
           eval(code)
-        })(loaclRequire, exports, graph[module].code);
+        })(localRequire, exports, graph[module].code);
         return exports
       };
       require('${entry}')
