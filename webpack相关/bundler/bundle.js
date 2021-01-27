@@ -84,11 +84,11 @@ const generateCOde = (entry) => {
         function loaclRequire(relativePath) {
           return require(graph[module].dependencies[relativePath])
         }
-        var exports = {}
+        var exports = {};
         (function(require, exports, code){
           eval(code)
-        })(loaclRequire, exports, graph[module].code)
-        returen exports
+        })(loaclRequire, exports, graph[module].code);
+        return exports
       };
       require('${entry}')
     })(${graph});
