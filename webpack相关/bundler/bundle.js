@@ -45,27 +45,27 @@ const moduleAnalyser = (filename) => {
 // 采用babel的parser把字符串转换成抽象语法树
 // 分析语法树的引用声明和依赖内容
 // 用键值对存储依赖关系的路径
-// 对模块的源代码进行了一次编译(从esmodule即es6的语法编译成浏览器能识别的语法)
+// 对模块的源代码进行了一次编译(从es-module即es6的语法编译成浏览器能识别的语法)
 // const moduleInfo =  moduleAnalyser('./src/index.js')
 // console.log(moduleInfo);
 
 const makeDependenciesGraph = (entry) => {
   const entryModule = moduleAnalyser(entry)
-  const graphArry = [ entryModule ] // 依赖图谱
-  for (let i = 0; i < graphArry.length; i++) {
-    const item = graphArry[i];
+  const graphArray = [ entryModule ] // 依赖图谱
+  for (let i = 0; i < graphArray.length; i++) {
+    const item = graphArray[i];
     const { dependencies } = item
     if(dependencies) {
       for (let j in dependencies) {
-        graphArry.push(
+        graphArray.push(
           moduleAnalyser(dependencies[j])
         )
       }
     }
   }
-  // console.log(graphArry);
+  // console.log(graphArray);
   const graph = {};
-  graphArry.forEach(item => {
+  graphArray.forEach(item => {
     graph[item.filename] = {
       dependencies: item.dependencies,
       code: item.code
