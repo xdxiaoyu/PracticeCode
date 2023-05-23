@@ -1,0 +1,19 @@
+{
+  "name": "make-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.12.3",
+    "webpack-cli": "^4.3.1"
+  },
+  "devDependencies": {
+    "loader-utils": "^2.0.0"
+  }
+}

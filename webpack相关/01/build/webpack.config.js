@@ -35,10 +35,13 @@ module.exports = {
         'sass-loader'
       ]
     },
-    // exclude 排出在外的模块
     {
       test: /\.js$/,
+      // exclude 排出在外的模块
       exclude: /node_modules/,
+      // 还可以使用另一种方式
+      // include: path.resolve(__dirname, '../src') 只打包这个文件下的src的js文件
+      // 通过以上两种方式都可以有效的避免loader的重复使用，从而提高打包效率
       use: [
         {
           loader: "babel-loader",
