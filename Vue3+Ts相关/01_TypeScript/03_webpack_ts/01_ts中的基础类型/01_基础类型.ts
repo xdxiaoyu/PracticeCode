@@ -86,7 +86,8 @@
   function getLength(x: string | number): number {
     // return x.toString().length  如果是string类型不需要转义
     // 直接x.length 报错：类型“number”上不存在属性“length”。
-    // 类型断言  方式1：(<string>x) 方式2：(x as string)
+    // 类型断言
+    // 方式1：(<string>x) 方式2：(x as string)
 
     if ((<string>x).length) {
       // return (<string>x).length
