@@ -13,5 +13,5 @@
     return source.search(subString) > -1
   }
   console.log(searchString('哈哈，我又变帅了', '帅'));
-  
+
 })()

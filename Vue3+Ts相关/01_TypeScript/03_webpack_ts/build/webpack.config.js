@@ -42,7 +42,7 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js'] // 引入什么文件，可以不写他的扩展名
   },
 
-  // devtool: isProd ? 'cheap-module-source-map' : 'cheap-module-eval-source-map',
+  devtool: isProd ? 'cheap-module-source-map' : 'eval-cheap-module-source-map',
 
   devServer: {
     host: 'localhost', // 主机名
