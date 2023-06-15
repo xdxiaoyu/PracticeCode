@@ -13,7 +13,8 @@
 // import './07_静态成员'
 // import './08_抽象类'
 
-import './01_函数'
+// import './01_函数'
+import './02_可选参数和默认参数'
 
 setTimeout(() => {
   document.write('hhhhh,我又变坚强啦~')
