@@ -19,9 +19,7 @@
 // import './04_函数重载'
 
 // import './01_泛型'
-// import './02_多个泛型参数的函数'
-
-import './01_声明文件'
+import './02_多个泛型参数的函数'
 
 setTimeout(() => {
   document.write('hhhhh,我又变坚强啦~')
